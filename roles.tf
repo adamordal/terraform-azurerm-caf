@@ -15,6 +15,11 @@ module "custom_roles" {
 #
 
 
+output "hello_from_roles"{
+  value = var.remote_objects
+}
+
+
 resource "azurerm_role_assignment" "for" {
   for_each = try(local.roles_to_process, {})
 
