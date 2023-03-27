@@ -15,7 +15,7 @@ module "custom_roles" {
 #
 
 output "hello_from_roles" {
-  value = local.combined_objects_keyvaults
+  value = var.remote_objects.keyvaults
 }
 
 resource "azurerm_role_assignment" "for" {
