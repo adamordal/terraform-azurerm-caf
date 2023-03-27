@@ -14,6 +14,10 @@ module "custom_roles" {
 # Require the modules output an rbac_id that is set to the principal_id
 #
 
+output "hello_from_roles" {
+  value = local.services_roles
+}
+
 resource "azurerm_role_assignment" "for" {
   for_each = try(local.roles_to_process, {})
 
